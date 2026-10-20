@@ -1,11 +1,18 @@
 const express = require('express')
-
+const mongoose = require('mongoose')
 const app = express()
+
+// connect to database
+mongoose.connect('mongodb://localhost/urlShortener')
 
 app.set('view engine', 'ejs')
 
 app.get('/', (req,res)=>{
     res.render('index')
+
+})
+
+app.post('/shortUrls', (req, res)=>{
 
 })
 
